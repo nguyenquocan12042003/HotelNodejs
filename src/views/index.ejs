@@ -12,8 +12,8 @@
       <img src="https://decoxdesign.com/upload/images/mau-khach-san-5-sao-05-decox-design.jpg" alt="Khách sạn">
       <div>
         <h2>Về khách sạn chúng tôi</h2>
-        <p>Hotel Paradise mang đến trải nghiệm nghỉ dưỡng sang trọng, dịch vụ đẳng cấp quốc tế, 
-        với vị trí đắc địa ngay cạnh bờ biển.</p>
+        <p>Hotel Paradise mang đến trải nghiệm nghỉ dưỡng sang trọng, dịch vụ đẳng cấp quốc tế,
+          với vị trí đắc địa ngay cạnh bờ biển.</p>
       </div>
     </div>
   </section>
@@ -41,54 +41,24 @@
   <section class="featured-rooms">
     <h2>Phòng nổi bật</h2>
     <div class="room-list">
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đơn">
-        <h3>Phòng đơn</h3>
-        <p>Giá: 500.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
-      <div class="room">
-        <img src="https://housedesign.vn/wp-content/uploads/2020/03/giuong-ngu-khach-san.jpg" alt="Phòng đôi">
-        <h3>Phòng đôi</h3>
-        <p>Giá: 800.000đ/đêm</p>
-        <button>Đặt ngay</button>
-      </div>
+      <% if (rooms && rooms.length> 0) { %>
+        <% rooms.forEach(room=> { %>
+          <div class="room">
+            <img src="<%= room.image %>" alt="<%= room.name %>">
+            <h3>
+              <%= room.name %>
+            </h3>
+            <p>Giá: <%= room.price.toLocaleString() %>đ/đêm</p>
+            <div class="actions">
+              <a href="/rooms/<%= room.id %>" class="btn">Xem chi tiết</a>
+              <button class="btn">Đặt ngay</button>
+            </div>
+          </div>
+          <% }) %>
+            <% } else { %>
+              <p>Hiện chưa có phòng nào.</p>
+              <% } %>
     </div>
   </section>
+
 </main>

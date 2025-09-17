@@ -1,11 +1,23 @@
-const pool = require("../config/db");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/db");
 
-async function createUser(name, email, password) {
-  const [rows] = await pool.query(
-    "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-    [name, email, password]
-  );
-  return rows.insertId;
-}
+const User = sequelize.define("User", {
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+}, {
+  tableName: "users",
+  timestamps: false,
+});
 
-module.exports = { createUser };
+module.exports = User;

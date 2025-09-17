@@ -33,9 +33,11 @@ app.use((req, res, next) => {
 });
 
 const authRoutes = require("./routes/auth");
+const roomRoutes = require("./routes/rooms");
 
 // Routes
 app.use("/", routes);
 app.use("/", authRoutes);
+app.use("/rooms", roomRoutes);
 
 module.exports = app;

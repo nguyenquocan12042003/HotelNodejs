@@ -1,0 +1,17 @@
+<section class="rooms">
+  <h2>Các loại phòng</h2>
+  <div class="room-list">
+    <% rooms.forEach(room => { %>
+      <div class="room">
+        <img src="<%= room.image %>" alt="<%= room.name %>">
+        <h3><%= room.name %></h3>
+        <p class="price"><%= room.price.toLocaleString("vi-VN") %>đ/đêm</p>
+        <div class="actions">
+          <a href="/rooms/<%= room.id %>" class="btn">Xem chi tiết</a>
+          <button class="btn-buynow">Đặt ngay</button>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  
+</section>

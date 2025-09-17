@@ -1,0 +1,17 @@
+<div class="room-details">
+  <div class="room-card">
+    <div class="room-image">
+      <img src="<%= room.image %>" alt="<%= room.name %>">
+    </div>
+    <div class="room-info">
+      <h2><%= room.name %></h2>
+      <p class="price"><%= room.price.toLocaleString() %>đ / đêm</p>
+      <p class="description"><%= room.description %></p>
+
+      <div class="actions">
+        <a href="/rooms" class="btn btn-secondary">⬅ Quay lại</a>
+        <button class="btn btn-primary">Đặt ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
