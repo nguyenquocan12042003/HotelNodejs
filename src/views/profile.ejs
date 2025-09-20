@@ -1,0 +1,11 @@
+<div class="profile-container">
+  <h2>Thông tin cá nhân</h2>
+  <p><strong>Tên:</strong> <%= user.name %></p>
+  <p><strong>Email:</strong> <%= user.email %></p>
+  <!-- Không hiển thị password -->
+
+  <div class="profile-actions">
+    <a href="/edit-profile" class="btn">Chỉnh sửa</a>
+    <a href="/logout" class="btn">Đăng xuất</a>
+  </div>
+</div>

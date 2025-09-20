@@ -5,7 +5,7 @@ const homeController = require("../controllers/homeController");
 const roomController = require("../controllers/roomController");
 
 router.get("/", homeController.index);
-router.get("/rooms", roomController.getRooms);   // ✅ gọi controller đúng
+router.get("/rooms", roomController.getRooms);   
 router.get("/contact", homeController.contact);
 
 router.get("/login", (req, res) => {

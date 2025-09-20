@@ -1,0 +1,36 @@
+<h1>Danh sách phòng</h1>
+<a href="/admin/rooms/add" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm phòng</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên phòng</th>
+      <th>Loại phòng</th>
+      <th>Giá (VNĐ)</th>
+      <th>Trạng thái</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rooms.forEach(room => { %>
+      <tr>
+        <td><%= room.id %></td>
+        <td><%= room.name %></td>
+        <td><%= room.type %></td>
+        <td><%= room.price.toLocaleString() %></td>
+        <td>
+          <% if (room.status === 'available') { %>
+            <span class="badge badge-success">Còn trống</span>
+          <% } else { %>
+            <span class="badge badge-danger">Đã đặt</span>
+          <% } %>
+        </td>
+        <td>
+          <a href="/admin/rooms/edit/<%= room.id %>" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+          <a href="/admin/rooms/delete/<%= room.id %>" class="btn btn-sm btn-danger" onclick="return confirm('Xóa phòng này?');"><i class="fas fa-trash"></i></a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

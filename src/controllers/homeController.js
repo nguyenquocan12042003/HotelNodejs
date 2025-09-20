@@ -1,3 +1,4 @@
+const e = require("express");
 const Room = require("../models/Room");
 
 exports.index = async (req, res) => {
@@ -35,4 +36,8 @@ exports.roomDetail = async (req, res) => {
 
 exports.contact = (req, res) => {
   res.render("contact", { title: "Liên hệ" });
+};
+
+exports.frofile = (req, res) => {
+  res.render("frofile", { title: "Thông tin cá nhân" });
 };

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Paradise</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+  <h1>Hotel Paradise</h1>
+  <nav>
+    <a href="/">Trang chủ</a>
+    <a href="/rooms">Phòng</a>
+    <a href="/contact">Liên hệ</a>
+
+    <% if (user) { %>
+      <div class="dropdown">
+        <a href="#" class="account-link">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <div class="dropdown-content">
+          <p>Xin chào, <%= user.name %></p>
+          <a href="/profile">Thông tin cá nhân</a>
+          <a href="/logout">Đăng xuất</a>
+        </div>
+      </div>
+    <% } else { %>
+      <a href="/login" class="account-link">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    <% } %>
+  </nav>
+</header>
+
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hotel Paradise. All rights reserved.</p>
+  </footer>
+</body>
+</html>
